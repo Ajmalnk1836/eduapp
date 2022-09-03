@@ -15,6 +15,8 @@ abstract class Routes {
   static const SCREENFIVE = _Paths.SCREENFIVE;
   static const SIGNUPSCREEN = _Paths.SIGNUPSCREEN;
   static const SLIDABLESCREEN = _Paths.SLIDABLESCREEN;
+  static const PERSONALDETAILSSCREEN = _Paths.PERSONALDETAILSSCREEN;
+  static const EMAILVERIFICATION = _Paths.EMAILVERIFICATION;
 }
 
 abstract class _Paths {
@@ -29,4 +31,6 @@ abstract class _Paths {
   static const SCREENFIVE = '/screenfive';
   static const SIGNUPSCREEN = '/signupscreen';
   static const SLIDABLESCREEN = '/slidablescreen';
+  static const PERSONALDETAILSSCREEN = '/personaldetailsscreen';
+  static const EMAILVERIFICATION = '/emailverification';
 }

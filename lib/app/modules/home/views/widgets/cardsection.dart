@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class cardsection extends StatelessWidget {
   const cardsection({
@@ -8,6 +9,7 @@ class cardsection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color.fromARGB(255, 185, 221, 248),
         child: Column(
       //    crossAxisAlignment: CrossAxisAlignment.center ,
       children: [
@@ -18,9 +20,11 @@ class cardsection extends StatelessWidget {
             height: 70,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(15),
+            
             ),
+            child: Lottie.asset("assets/icons/lottie/73850-offline-teaching.json"),  
           ),
         ),
         SizedBox(
@@ -91,7 +95,7 @@ class cardsection extends StatelessWidget {
         ),
         Container(
           decoration: BoxDecoration(
-              color: Colors.blue,
+             color: Color.fromARGB(255, 65, 3, 223),
               borderRadius: BorderRadius.circular(10)),
           height: 40,
           width: MediaQuery.of(context).size.width * 2.8 / 10,

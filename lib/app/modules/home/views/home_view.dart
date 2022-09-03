@@ -4,6 +4,7 @@ import 'package:eduapp/app/modules/home/views/widgets/cardsection.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -26,6 +27,7 @@ class HomeView extends GetView<HomeController> {
                   itemCount: 45,
                   itemBuilder: (context, index) {
                     return Container(
+                     // color: Colors.white,
                       //  height: 80,
                       width: MediaQuery.of(context).size.width * 39 / 100,
                       child: cardsection(),
@@ -46,7 +48,7 @@ class HomeView extends GetView<HomeController> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 65, 3, 223),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 height: 250,
@@ -68,7 +70,7 @@ class HomeView extends GetView<HomeController> {
               child: Container(
                 height: 200 ,
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 65, 3, 223), 
                   borderRadius: BorderRadius.circular(15), 
                 ),
                 child: Row(
@@ -98,6 +100,7 @@ class HomeView extends GetView<HomeController> {
                       Container(
                       height: 200,
                       width: MediaQuery.of(context).size.width * 4.5 /10,
+                      child: Lottie.asset("assets/icons/lottie/73850-offline-teaching.json"),
                        
                     )
 

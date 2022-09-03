@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class HomescreenController extends GetxController {
-  //TODO: Implement HomescreenController
+class PersonaldetailsscreenController extends GetxController {
+  //TODO: Implement PersonaldetailsscreenController
 
   final count = 0.obs;
   @override

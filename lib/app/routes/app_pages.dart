@@ -6,15 +6,15 @@ import 'package:eduapp/app/modules/bottomnavigationscreen/bindings/bottomnavigat
 import 'package:eduapp/app/modules/bottomnavigationscreen/views/bottomnavigationscreen_view.dart';
 import 'package:eduapp/app/modules/detailsscreen/bindings/detailsscreen_binding.dart';
 import 'package:eduapp/app/modules/detailsscreen/views/detailsscreen_view.dart';
+import 'package:eduapp/app/modules/emailverification/bindings/emailverification_binding.dart';
+import 'package:eduapp/app/modules/emailverification/views/emailverification_view.dart';
 import 'package:eduapp/app/modules/home/bindings/home_binding.dart';
 import 'package:eduapp/app/modules/home/views/home_view.dart';
-import 'package:eduapp/app/modules/homescreen/bindings/homescreen_binding.dart';
-import 'package:eduapp/app/modules/homescreen/views/homescreen_view.dart';
-import 'package:eduapp/app/modules/homescrren/bindings/homescrren_binding.dart';
-import 'package:eduapp/app/modules/homescrren/views/homescrren_view.dart';
+import 'package:eduapp/app/modules/personaldetailsscreen/bindings/personaldetailsscreen_binding.dart';
+import 'package:eduapp/app/modules/personaldetailsscreen/views/personaldetailsscreen_view.dart';
 import 'package:eduapp/app/modules/profilescreen/bindings/profilescreen_binding.dart';
 import 'package:eduapp/app/modules/profilescreen/views/profilescreen_view.dart';
-import 'package:eduapp/app/modules/screenfive/bindings/screenfive_binding.dart';
+import 'package:eduapp/app/modules/screenfive/bindings/screenfive_binding.dart'; 
 import 'package:eduapp/app/modules/screenfive/views/screenfive_view.dart';
 import 'package:eduapp/app/modules/screenfour/bindings/screenfour_binding.dart';
 import 'package:eduapp/app/modules/screenfour/views/screenfour_view.dart';
@@ -28,7 +28,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.AUTHENTICATIONSCREEN;
 
   static final routes = [
     GetPage(
@@ -42,19 +42,9 @@ class AppPages {
       binding: AuthenticationscreenBinding(),
     ),
     GetPage(
-      name: _Paths.HOMESCREEN,
-      page: () => HomescreenView(),
-      binding: HomescreenBinding(),
-    ),
-    GetPage(
       name: _Paths.BOTTOMNAVIGATIONSCREEN,
       page: () => BottomnavigationscreenView(),
       binding: BottomnavigationscreenBinding(),
-    ),
-    GetPage(
-      name: _Paths.HOMESCRREN,
-      page: () => HomescrrenView(),
-      binding: HomescrrenBinding(),
     ),
     GetPage(
       name: _Paths.DETAILSSCREEN,
@@ -85,6 +75,16 @@ class AppPages {
       name: _Paths.SLIDABLESCREEN,
       page: () => SlidablescreenView(),
       binding: SlidablescreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.PERSONALDETAILSSCREEN,
+      page: () => PersonaldetailsscreenView(),
+      binding: PersonaldetailsscreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.EMAILVERIFICATION,
+      page: () => EmailverificationView(),
+      binding: EmailverificationBinding(),
     ),
   ];
 }

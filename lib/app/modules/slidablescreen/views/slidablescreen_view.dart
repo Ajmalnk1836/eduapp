@@ -1,3 +1,4 @@
+import 'package:eduapp/app/modules/personaldetailsscreen/views/personaldetailsscreen_view.dart';
 import 'package:eduapp/app/modules/slidablescreen/views/widgets/profilecard.dart';
 import 'package:eduapp/app/modules/slidablescreen/views/widgets/profilestatus.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,10 @@ class SlidablescreenView extends GetView<SlidablescreenController> {
                         height: 90,
                         width: MediaQuery.of(context).size.width * 4 / 10,
                         decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/icons/lottie/bg.png",),
+                              fit: BoxFit.fitWidth,
+                            ),
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 3)),
                       ),
@@ -42,7 +47,7 @@ class SlidablescreenView extends GetView<SlidablescreenController> {
                               onPressed: () {},
                               icon: Icon(
                                 Icons.camera_alt_outlined,
-                                color: Colors.white,
+                                color: Colors.black, 
                               )))
                     ],
                   ),
@@ -136,7 +141,9 @@ class SlidablescreenView extends GetView<SlidablescreenController> {
                             icon: Icon(Icons.person),
                             name: "personal Details",
                             button: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(PersonaldetailsscreenView());
+                                },
                                 icon: Icon(Icons.arrow_forward_ios_rounded)),
                           ),
                           profilecards(
@@ -146,22 +153,20 @@ class SlidablescreenView extends GetView<SlidablescreenController> {
                                 onPressed: () {},
                                 icon: Icon(Icons.arrow_forward_ios_rounded)),
                           ),
-                           profilecards(
+                          profilecards(
                             icon: Icon(Icons.password),
-                            name: "change Password", 
+                            name: "change Password",
                             button: IconButton(
                                 onPressed: () {},
                                 icon: Icon(Icons.arrow_forward_ios_rounded)),
                           ),
-                           profilecards(
+                          profilecards(
                             icon: Icon(Icons.question_answer),
-                            name: "Help", 
-                           
+                            name: "Help",
                           ),
-                           profilecards(
+                          profilecards(
                             icon: Icon(Icons.logout),
-                            name: "Logout",   
-                           
+                            name: "Logout",
                           )
                         ],
                       ),
@@ -174,4 +179,3 @@ class SlidablescreenView extends GetView<SlidablescreenController> {
         )));
   }
 }
-

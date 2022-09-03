@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class AssignmentCard extends StatelessWidget {
   const AssignmentCard({Key? key, required this.name, required this.buttonname})
@@ -25,11 +26,23 @@ class AssignmentCard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 90,
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(10),
+                child: Card(
+                  child: Container(  
+                    height: 90,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                         BoxShadow(
+                      color: Color.fromARGB(255, 240, 234, 234),
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 0.0,
+                      spreadRadius: 0.0,
+                    ), 
+                        
+                      ],
+                      //color: Colors.red,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Lottie.asset("assets/icons/lottie/74229-teaching.json",width: 130   ),
                   ),
                 ),
               ),
@@ -45,10 +58,10 @@ class AssignmentCard extends StatelessWidget {
                 height: 35,
                 width: MediaQuery.of(context).size.width * 2.4 / 10,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(15)),
+                   color: Color.fromARGB(255, 65, 3, 223), 
+                    borderRadius: BorderRadius.circular(12  )),
                 child: Center(
-                  child: Text(buttonname),
+                  child: Text(buttonname,style: TextStyle(color: Colors.white),),
                 ),
               )
             ],

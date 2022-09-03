@@ -1,3 +1,7 @@
+import 'package:eduapp/app/modules/bottomnavigationscreen/views/bottomnavigationscreen_view.dart';
+import 'package:eduapp/app/modules/home/views/home_view.dart';
+import 'package:eduapp/app/modules/icons/logos_icons.dart';
+import 'package:eduapp/app/modules/signupscreen/views/signupscreen_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -6,6 +10,9 @@ import 'package:google_fonts/google_fonts.dart';
 import '../controllers/authenticationscreen_controller.dart';
 
 class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
+  AuthenticationscreenController controller =
+      Get.put(AuthenticationscreenController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +28,10 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
               ),
               Text(
                 "EDU",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    color: Colors.grey),
               ),
               SizedBox(
                 height: 10,
@@ -39,20 +49,24 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextFormField(
+                  controller: controller.name,
                   decoration: InputDecoration(
+                      hintText: "Enter Email Address",
                       border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  )),
+                        borderRadius: BorderRadius.circular(10.0),
+                      )),
                 ),
               ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
                 child: TextFormField(
+                  controller: controller.password,
                   decoration: InputDecoration(
+                      hintText: "Password ",
                       border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  )),
+                        borderRadius: BorderRadius.circular(10.0),
+                      )),
                 ),
               ),
               SizedBox(
@@ -62,10 +76,15 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
                   height: 60,
                   width: MediaQuery.of(context).size.width * 80 / 100,
                   decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 126, 6, 224),
                       borderRadius: BorderRadius.circular(10)),
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // controller.signupmodel(
+                        //     //controller.name.text, controller.password.text
+                        //     );
+                        Get.off(BottomnavigationscreenView());
+                      },
                       child: Text(
                         "Sign in",
                         style: TextStyle(color: Colors.white),
@@ -74,7 +93,9 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
                 height: 10,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(SignupscreenView());
+                  },
                   child: Text(
                     "Sign up with mobile number",
                     style: TextStyle(fontSize: 15),
@@ -88,7 +109,7 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
                 height: 10,
               ),
               Container(
-                color: Colors.grey,
+                color: Color.fromARGB(255, 0, 0, 0),
                 height: 1,
                 width: MediaQuery.of(context).size.width * 80 / 100,
               ),
@@ -106,7 +127,19 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
                 height: 60,
                 width: MediaQuery.of(context).size.width * 70 / 100,
                 decoration: BoxDecoration(border: Border.all()),
-                child: Center(child: Text("Google")),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.g_mobiledata,
+                      size: 43,
+                    ),
+                    Text(
+                      "Google",
+                      style: TextStyle(fontSize: 21),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -115,49 +148,17 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
                 height: 60,
                 width: MediaQuery.of(context).size.width * 70 / 100,
                 decoration: BoxDecoration(border: Border.all()),
-                child: Center(child: Text("Facebook")),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Logos.facebook_squared),
+                    Text(
+                      "Facebook",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
               )
-              // Text("Sign with mobile number?"),
-              // Text(
-              //   "Dont have Account?",
-              //   style: TextStyle(color: Colors.black, fontSize: 25),
-              // ),
-              // Text("sign with email?"),
-              // SizedBox(
-              //   height: 5,
-              // ),
-              // Divider(
-              //   thickness: 2,
-              // ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              // Text(
-              //   "sign up with:",
-              //   style: TextStyle(fontSize: 20),
-              // ),
-              // SizedBox(
-              //   height: 5,
-              // ),
-              // Container(
-              //     color: Colors.black,
-              //     child: TextButton(
-              //         onPressed: () {},
-              //         child: Text(
-              //           "sign with google",
-              //           style: TextStyle(color: Colors.white),
-              //         ))),
-              // SizedBox(
-              //   height: 5,
-              // ),
-              // Container(
-              //     color: Colors.blue,
-              //     child: TextButton(
-              //         onPressed: () {},
-              //         child: Text(
-              //           "sign with facebook",
-              //           style: TextStyle(color: Colors.white),
-              //         ))),
             ],
           )),
         ),
