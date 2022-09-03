@@ -80,10 +80,9 @@ class AuthenticationscreenView extends GetView<AuthenticationscreenController> {
                       borderRadius: BorderRadius.circular(10)),
                   child: TextButton(
                       onPressed: () {
-                        // controller.signupmodel(
-                        //     //controller.name.text, controller.password.text
-                        //     );
-                        Get.off(BottomnavigationscreenView());
+                        controller.signupmodel(
+                            controller.name.text, controller.password.text);
+                        //  Get.off(BottomnavigationscreenView());
                       },
                       child: Text(
                         "Sign in",
